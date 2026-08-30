@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>더커스텀 운영 매뉴얼 · 읽기용</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">TC</div>
+        <div><strong>더커스텀</strong><span>운영 매뉴얼</span></div>
+      </div>
+      <button class="search-trigger" id="searchTrigger" type="button"><span>⌕</span><span>매뉴얼 검색</span><kbd>Ctrl K</kbd></button>
+      <nav class="chapter-nav" id="chapterNav"></nav>
+      <div class="sidebar-foot">
+        <div class="read-progress"><span>읽기 진행도</span><strong id="readPercent">0%</strong></div>
+        <div class="progress-line"><i id="progressLine"></i></div>
+        <small>페이지를 넘기면 자동으로 저장됩니다.</small>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" type="button">☰</button>
+        <div class="crumb"><span>THE CUSTOM</span><b id="crumbTitle">운영 매뉴얼</b></div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="fontMinus" type="button" aria-label="글자 작게">A−</button>
+          <button class="ghost-btn" id="fontPlus" type="button" aria-label="글자 크게">A+</button>
+          <button class="ghost-btn" id="printBtn" type="button">인쇄</button>
+        </div>
+      </header>
+
+      <main class="reader-wrap">
+        <article class="reader" id="reader"></article>
+        <aside class="toc" id="toc"></aside>
+      </main>
+
+      <footer class="pager">
+        <button id="prevBtn" type="button">← 이전</button>
+        <div><strong id="pageIndicator">1 / 13</strong><span id="pageLabel"></span></div>
+        <button id="nextBtn" type="button">다음 →</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-card">
+      <div class="search-input-wrap"><span>⌕</span><input id="searchInput" placeholder="규정, 수치, 업무 절차를 검색하세요" autocomplete="off"><button id="closeSearch" type="button">Esc</button></div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <div class="image-modal" id="imageModal" aria-hidden="true"><button id="imageClose">×</button><img id="imageModalImg" alt="확대 이미지"></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
